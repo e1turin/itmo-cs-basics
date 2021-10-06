@@ -22,7 +22,7 @@ clefairy=./lab0/phanpy0/clefairy
 
 swalot4=./lab0/swalot4 #file
 
-vigoroth=./lab0/vigoroth7
+vigoroth7=./lab0/vigoroth7
 taillow=./lab0/vigoroth7/taillow #file
 prinplup=./lab0/vigoroth7/prinplup
 armaldo=./lab0/vigoroth7/armaldo
@@ -51,7 +51,7 @@ mkdir $lab0
 
     touch $swalot4     
 
-    mkdir $vigoroth    
+    mkdir $vigoroth7
         touch $taillow     
         mkdir $prinplup    
         mkdir $armaldo     
