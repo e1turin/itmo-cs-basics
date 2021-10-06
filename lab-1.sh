@@ -87,7 +87,7 @@ echo "Живет Mountain" >> $archeops
 printf "Возможности\nOverland=8 Surface=5 Jump=3 Power=3 Intelligence=5 Dream Smoke=0 Mind\nLock=0" >> $hypno
 
 #touch ./lab0/phanpy0/bronzor
-printf "Rollout Signal Beam Skill Swap Sleep Talk Snore Stealth Rock Trick\nWonder Room" $bronzor
+printf "Rollout Signal Beam Skill Swap Sleep Talk Snore Stealth Rock Trick\nWonder Room" >> $bronzor
 
 #touch .lab0/swalot4
 printf "Способности Venom Sticky Hold Liquid\nOoze" >> $swalot4
