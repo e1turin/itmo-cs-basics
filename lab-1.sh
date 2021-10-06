@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Variables
@@ -97,6 +96,27 @@ echo "weight=5.1 height=12.0 atk=6 def=3" >> $taillow
 
 ##########
 
-#chmod 006 ./lab0/alakazam3
-#chmod uo-rwx,g=rw ./lab0/cacturne3 
-#chmod feraligatr5 
+chmod 006 $alakazam3 
+chmod a-rwx,g+rw $cacturne3
+chmod 357 $feraligatr5
+chmod 361 $swablu
+chmod 551 $dwebble
+chmod 604 $floatzel
+chmod 551 $dragonair
+chmod 004 $fraxure
+chmod 524 $phanpy0
+chmod u-rwx,g=r,o=rw $archeops
+chmod 640 $hypno
+chmod 404 $bronzor
+chmod 317 $clefairy
+chmod ug-rwx,o=rw $swalot4
+chmod 736 $vigoroth7
+chmod 400 $taillow
+chmod 357 $prinplup
+chmod 737 $armaldo
+chmod 341 $tynamo
+
+########
+
+
+
