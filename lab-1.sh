@@ -1,6 +1,9 @@
 #!/bin/bash
 
-# Variables
+
+# Task 1 
+
+## Variables
 lab0=./lab0
 
 alakazam3=./lab0/alakazam3 #file
@@ -28,7 +31,7 @@ prinplup=./lab0/vigoroth7/prinplup
 armaldo=./lab0/vigoroth7/armaldo
 tynamo=./lab0/vigoroth7/tynamo
 
-########
+# Creating dir tree
 
 mkdir $lab0 
 
@@ -57,44 +60,38 @@ mkdir $lab0
         mkdir $armaldo     
         mkdir $tynamo
 
-#########
+# Filling files
 
-#touch ./lab0/alakazam3
 echo "saltk=14 sdef=9 spd=12" >> $alakazam3
 
-#touch ./lab0/cacturne3
 cat > $cacturne3 << EOF
 Тип диеты
 Phototroph
 EOF
 
-#touch ./lab0/feraligatr5/floatzel
 cat > $floatzel << EOF
 Развитые способности Water Veil
 EOF
 
-#touch ./lab0/feraligatr5/fraxure
 cat > $fraxure << EOF
 Тип
 покемона  DRAGON NONE
 EOF
 
-#touch ./lab0/phanpy0/archeops
 echo "Живет Mountain" >> $archeops
 
-#touch ./lab0/phanpy0/hypno
 printf "Возможности\nOverland=8 Surface=5 Jump=3 Power=3 Intelligence=5 Dream Smoke=0 Mind\nLock=0" >> $hypno
 
-#touch ./lab0/phanpy0/bronzor
 printf "Rollout Signal Beam Skill Swap Sleep Talk Snore Stealth Rock Trick\nWonder Room" >> $bronzor
 
-#touch .lab0/swalot4
 printf "Способности Venom Sticky Hold Liquid\nOoze" >> $swalot4
 
-#touch ./lab0/vigoroth7/taillow
 echo "weight=5.1 height=12.0 atk=6 def=3" >> $taillow
 
-##########
+
+# Task 2
+
+## Changing permissions
 
 chmod 006 $alakazam3 
 chmod a-rwx,g+rw $cacturne3
@@ -116,7 +113,26 @@ chmod 357 $prinplup
 chmod 737 $armaldo
 chmod 341 $tynamo
 
-########
+
+# Task 3
+
+## Copy recursively $phanpy0 to $phanpy/clefairy
 
 
+
+
+## Merge $archeops & $bronzor into $lab0/alakazam3_27
+
+## Create symlink for $cacturne3 named $phanpy0/bronzorcacturne
+
+## Copy $cacturne3 to new $phanpy0/bronzorcacturne
+
+## Copy $cacturne3 to $prinplup
+
+## Create hardlink for $cacturne3 named $feraligatr5/fraxurecacturne
+
+## Create symlink for $feraligatr5 in $lab0/Copy_30
+
+
+# Task 4
 
