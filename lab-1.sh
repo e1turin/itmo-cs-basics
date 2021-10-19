@@ -1,35 +1,35 @@
 #!/bin/bash
 
 
-# Task 1 
+# TASK 1 
 
 ## Variables
-lab0=./lab0
+curr=. # on producton it is ~
+lab0=$curr/lab0
 
-alakazam3=./lab0/alakazam3 #file
-cacturne3=./lab0/cacturne3 #file
+alakazam3=$lab0/alakazam3 #file
+cacturne3=$lab0/cacturne3 #file
 
-feraligatr5=./lab0/feraligatr5 
-swablu=./lab0/feraligatr5/swablu
-dwebble=./lab0/feraligatr5/dwebble
-floatzel=./lab0/feraligatr5/floatzel #file
-dragonair=./lab0/feraligatr5/dragonair
-fraxure=./lab0/feraligatr5/fraxure #file
+feraligatr5=$lab0/feraligatr5 
+    swablu=$feraligatr5/swablu
+    dwebble=$feraligatr5/dwebble
+    floatzel=$feraligatr5/floatzel #file
+    dragonair=$feraligatr5/dragonair
+    fraxure=$feraligatr5/fraxure #file
 
+phanpy0=$lab0/phanpy0
+    archeops=$phanpy0/archeops #file
+    hypno=$phanpy0/hypno #file
+    bronzor=$phanpy0/bronzor #file
+    clefairy=$phanpy0/clefairy
 
-phanpy0=./lab0/phanpy0
-archeops=./lab0/phanpy0/archeops #file
-hypno=./lab0/phanpy0/hypno #file
-bronzor=./lab0/phanpy0/bronzor #file
-clefairy=./lab0/phanpy0/clefairy
+swalot4=$lab0/swalot4 #file
 
-swalot4=./lab0/swalot4 #file
-
-vigoroth7=./lab0/vigoroth7
-taillow=./lab0/vigoroth7/taillow #file
-prinplup=./lab0/vigoroth7/prinplup
-armaldo=./lab0/vigoroth7/armaldo
-tynamo=./lab0/vigoroth7/tynamo
+vigoroth7=$lab0/vigoroth7
+    taillow=$vigoroth7/taillow #file
+    prinplup=$vigoroth7/prinplup
+    armaldo=$vigoroth7/armaldo
+    tynamo=$vigoroth7/tynamo
 
 # Creating dir tree
 
@@ -89,7 +89,7 @@ printf "Способности Venom Sticky Hold Liquid\nOoze" >> $swalot4
 echo "weight=5.1 height=12.0 atk=6 def=3" >> $taillow
 
 
-# Task 2
+# TASK 2
 
 ## Changing permissions
 
@@ -114,25 +114,107 @@ chmod 737 $armaldo
 chmod 341 $tynamo
 
 
-# Task 3
+# TASK 3
 
-## Copy recursively $phanpy0 to $phanpy/clefairy
+## Copy recursively $phanpy0 to $phanpy0/clefairy
 
-
+chmod u+r $clefairy $archeops
+cp -rp $phanpy0 $lab0/phanpy0_tmp
+chmod u+w $phanpy0 $lab0/phanpy0_tmp
+mv $lab0/phanpy0_tmp $clefairy/phanpy0
+chmod u-r $clefairy
+#chmod u-r $archeops # will do it later
+chmod u-w $clefairy/phanpy0
+#chmod u-w $phanpy0 # will do it later
 
 
 ## Merge $archeops & $bronzor into $lab0/alakazam3_27
 
+cat $archeops $bronzor > $lab0/alakazam3_27
+chmod u-r $archeops 
+
+
 ## Create symlink for $cacturne3 named $phanpy0/bronzorcacturne
+
+chmod u+r $cacturne3 
+ln -s -T ../cacturne3 $phanpy0/bronzorcacturne
+#chmod u-r $cacturne3
+#chmod u-w $phanpy0 # will do it later
+
 
 ## Copy $cacturne3 to new $phanpy0/bronzorcacturne
 
+cp $cacturne3 $phanpy0/bronzorcacturne 2>/dev/null | true 
+#chmod u-r $cacturne3 # will do it later
+chmod u-w $phanpy0
+
+
 ## Copy $cacturne3 to $prinplup
+
+cp $cacturne3 $prinplup
+#chmod u-r $cacturne3 # will do it later
+
 
 ## Create hardlink for $cacturne3 named $feraligatr5/fraxurecacturne
 
+ln $cacturne3 $feraligatr5/fraxurecacturne 
+chmod u-r $cacturne3
+
+
 ## Create symlink for $feraligatr5 in $lab0/Copy_30
 
+ln -s -T ./feraligatr5 $lab0/Copy_30
 
-# Task 4
+
+
+# TASK 4
+
+## Count lines of files: floatzel, fraxure, archeops, hypno, bronzor, write the result to a file in the /tmp directory, redirect access errors to a file in the /tmp directory
+
+chmod u+r $feraligatr5
+cat $floatzel | wc -l > /tmp/floatzel_len
+cat $fraxure | wc -l > /tmp/fraxure_len
+
+
+cat $floatzel | wc -l > /tmp/floatzel_len
+
+
+
+## Print the last three elements of the recursive list of names and attributes of files in the lab0 directory, starting with the character 't', sort the list in ascending order by the number of hard links, add the output of access errors to the standard output
+
+
+## Print the contents of the cacturne3 file with line numbers, exclude lines ending in 'd', ignore case, add access error output to standard output
+
+
+## List the filenames in the feraligatr5 directory, sort the list by name a-> z, do not suppress or redirect access errors
+
+
+## Output recursively a list of names and attributes of files in the lab0 directory containing the string "swa", sort the list in descending order of the date of access to the file, suppress the output of access errors
+
+
+
+## Print recursively a list of names and attributes of files in the lab0 directory ending with the 'r' character, sort the list in ascending order of the access date to the file, redirect access errors to a file in the / tmp directory
+
+
+
+# TASK 5
+
+## Delete file cacturne3 
+
+
+## Delete file lab0 / phanpy0 / hypno
+
+
+## remove symbolic links Copy_ *
+
+
+## remove hard links lab0 / feraligatr5 / fraxurecactur *
+
+
+## Delete directory feraligatr5
+
+
+## Delete directory lab0 / feraligatr5 / swablu
+
+
 
