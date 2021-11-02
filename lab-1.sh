@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 # TASK 1 
 
 ## Variables
@@ -30,6 +29,7 @@ vigoroth7=$lab0/vigoroth7
     prinplup=$vigoroth7/prinplup
     armaldo=$vigoroth7/armaldo
     tynamo=$vigoroth7/tynamo
+
 
 # Creating dir tree
 
@@ -166,55 +166,79 @@ chmod u-r $cacturne3
 ln -s -T ./feraligatr5 $lab0/Copy_30
 
 
-
 # TASK 4
 
 ## Count lines of files: floatzel, fraxure, archeops, hypno, bronzor, write the result to a file in the /tmp directory, redirect access errors to a file in the /tmp directory
 
-chmod u+r $feraligatr5
-cat $floatzel | wc -l > /tmp/floatzel_len
-cat $fraxure | wc -l > /tmp/fraxure_len
-
-
-cat $floatzel | wc -l > /tmp/floatzel_len
-
+#chmod u+r $feraligatr5
+wc -l $floatzel > /tmp/floatzel_len 2> /tmp/err.log
+wc -l $fraxure  > /tmp/fraxure_len  2>>/tmp/err.log
+wc -l $archeops > /tmp/archeops_len 2>>/tmp/err.log
+wc -l $hypno    > /tmp/hypno_len    2>>/tmp/err.log
+wc -l $bronzor  > /tmp/bronzor_len  2>>/tmp/err.log
 
 
 ## Print the last three elements of the recursive list of names and attributes of files in the lab0 directory, starting with the character 't', sort the list in ascending order by the number of hard links, add the output of access errors to the standard output
 
+# TODO: delete 2>/dev/null
+ls -lR $lab0 | grep --extended-regexp "^[-dl][-rwx]{7}.* t.*$" | tail -n 3 | sort --key=2n
+
 
 ## Print the contents of the cacturne3 file with line numbers, exclude lines ending in 'd', ignore case, add access error output to standard output
+
+#TODO: delete 2>/dev/null
+cat -n $cacturne3  | grep -vi "d$"
 
 
 ## List the filenames in the feraligatr5 directory, sort the list by name a-> z, do not suppress or redirect access errors
 
+#TODO: delete 2>/dev/null
+ls -1 $feraligatr5 | sort 
+
 
 ## Output recursively a list of names and attributes of files in the lab0 directory containing the string "swa", sort the list in descending order of the date of access to the file, suppress the output of access errors
-
+ 
+ls -lRtr $lab0 2>/dev/null | grep --extended-regexp "[-dlr][-rwx]{7}.*swa.*" 
 
 
 ## Print recursively a list of names and attributes of files in the lab0 directory ending with the 'r' character, sort the list in ascending order of the access date to the file, redirect access errors to a file in the / tmp directory
 
+#TODO: change to /tmp/err.log
+ls -lRt $lab0 2>/tmp/err.log | grep "r$" 
 
 
 # TASK 5
-
+:
 ## Delete file cacturne3 
+
+chmod u+w $cacturne3
+rm $cacturne3
 
 
 ## Delete file lab0 / phanpy0 / hypno
 
+chmod u+w $phanpy0
+rm $hypno
+
 
 ## remove symbolic links Copy_ *
+
+rm $lab0/Copy_*
 
 
 ## remove hard links lab0 / feraligatr5 / fraxurecactur *
 
+rm $feraligatr5/fraxurecactur
+
 
 ## Delete directory feraligatr5
 
+chmod u+r $feraligatr5
+rm -rf $feraligatr5
 
 ## Delete directory lab0 / feraligatr5 / swablu
 
+chmod -R u+rw $lab0
+rm -rf $lab0
 
-
+echo "no lab0"
