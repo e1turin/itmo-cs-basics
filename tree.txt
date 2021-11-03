@@ -1,0 +1,10 @@
+.
+├── del-lab0.sh
+├── doc
+├── lab-1.sh
+├── latex
+├── README.md
+├── test-lab-1.sh
+└── tree.txt
+
+1 directory, 6 files
