@@ -1,0 +1,32 @@
+./lab0
+├── alakazam3
+├── alakazam3_27
+├── cacturne3
+├── Copy_30 -> ./feraligatr5
+├── feraligatr5
+│   ├── dragonair
+│   ├── dwebble
+│   ├── floatzel
+│   ├── fraxure
+│   ├── fraxurecacturne
+│   └── swablu
+├── phanpy0
+│   ├── archeops
+│   ├── bronzor
+│   ├── bronzorcacturne -> ../cacturne3
+│   ├── clefairy
+│   │   └── phanpy0
+│   │       ├── archeops
+│   │       ├── bronzor
+│   │       ├── clefairy
+│   │       └── hypno
+│   └── hypno
+├── swalot4
+└── vigoroth7
+    ├── armaldo
+    ├── prinplup
+    │   └── cacturne3
+    ├── taillow
+    └── tynamo
+
+13 directories, 16 files

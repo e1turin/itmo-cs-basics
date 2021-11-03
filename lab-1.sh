@@ -113,6 +113,7 @@ chmod 357 $prinplup
 chmod 737 $armaldo
 chmod 341 $tynamo
 
+sudo tree $lab0 > task2tree.txt
 
 # TASK 3
 
@@ -165,6 +166,9 @@ chmod u-r $cacturne3
 
 ln -s -T ./feraligatr5 $lab0/Copy_30
 
+ls -lR $lab0
+echo "here"
+sudo tree $lab0 > task3tree.txt
 
 # TASK 4
 
@@ -206,6 +210,7 @@ ls -lRtr $lab0 2>/dev/null | grep --extended-regexp "[-dlr][-rwx]{7}.*swa.*"
 #TODO: change to /tmp/err.log
 ls -lRt $lab0 2>/tmp/err.log | grep "r$" 
 
+sudo tree $lab0 > task4tree.txt
 
 # TASK 5
 :

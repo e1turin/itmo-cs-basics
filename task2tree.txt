@@ -1,0 +1,22 @@
+./lab0
+├── alakazam3
+├── cacturne3
+├── feraligatr5
+│   ├── dragonair
+│   ├── dwebble
+│   ├── floatzel
+│   ├── fraxure
+│   └── swablu
+├── phanpy0
+│   ├── archeops
+│   ├── bronzor
+│   ├── clefairy
+│   └── hypno
+├── swalot4
+└── vigoroth7
+    ├── armaldo
+    ├── prinplup
+    ├── taillow
+    └── tynamo
+
+10 directories, 9 files

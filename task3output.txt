@@ -1,0 +1,28 @@
+./lab0:
+total 28
+-------rw- 1 ivan ivan   23 ноя  3 12:29 alakazam3
+-rw-rw-r-- 1 ivan ivan   98 ноя  3 12:29 alakazam3_27
+----rw---- 2 ivan ivan   29 ноя  3 12:29 cacturne3
+lrwxrwxrwx 1 ivan ivan   13 ноя  3 12:29 Copy_30 -> ./feraligatr5
+d-wxr-xrwx 5 ivan ivan 4096 ноя  3 12:29 feraligatr5
+dr-x-w-r-- 3 ivan ivan 4096 ноя  3 12:29 phanpy0
+-------rw- 1 ivan ivan   52 ноя  3 12:29 swalot4
+drwx-wxrw- 5 ivan ivan 4096 ноя  3 12:29 vigoroth7
+
+./lab0/phanpy0:
+total 16
+----r--rw- 1 ivan ivan   20 ноя  3 12:29 archeops
+-r-----r-- 1 ivan ivan   78 ноя  3 12:29 bronzor
+lrwxrwxrwx 1 ivan ivan   12 ноя  3 12:29 bronzorcacturne -> ../cacturne3
+d-wx--xrwx 3 ivan ivan 4096 ноя  3 12:29 clefairy
+-rw-r----- 1 ivan ivan   99 ноя  3 12:29 hypno
+
+./lab0/vigoroth7:
+total 16
+drwx-wxrwx 2 ivan ivan 4096 ноя  3 12:29 armaldo
+d-wxr-xrwx 2 ivan ivan 4096 ноя  3 12:29 prinplup
+-r-------- 1 ivan ivan   35 ноя  3 12:29 taillow
+d-wxr----x 2 ivan ivan 4096 ноя  3 12:29 tynamo
+
+./lab0/vigoroth7/armaldo:
+total 0
