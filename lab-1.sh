@@ -3,7 +3,7 @@
 # TASK 1 
 
 ## Variables
-curr=. # on producton it is ~
+curr=. # on producton it is ~/
 lab0=$curr/lab0
 
 alakazam3=$lab0/alakazam3 #file
