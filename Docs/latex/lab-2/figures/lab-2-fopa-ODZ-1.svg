@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Arroe"
+   width="1280"
+   height="720"
+   viewBox="0 0 1280 720"
+   version="1.1"
+   sodipodi:docname="lab-2-fopa-ODZ-1.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview45"
+     pagecolor="#ffffff"
+     bordercolor="#999999"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:zoom="1.1041667"
+     inkscape:cx="639.84906"
+     inkscape:cy="349.13208"
+     inkscape:window-width="1920"
+     inkscape:window-height="1013"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="Arroe">
+    <sodipodi:guide
+       position="224.60377,537.96226"
+       orientation="1,0"
+       id="guide9268" />
+  </sodipodi:namedview>
+  <defs
+     id="defs30">
+    <style
+       id="style28">
+      .cls-1 {
+        fill: none;
+        stroke-width: 4.68px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #000;
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #919191;
+        stroke-width: 0.59px;
+      }
+
+      .cls-3 {
+        fill: #140f0c;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <path
+     class="cls-1"
+     d="M216,360h824l-52-27"
+     id="path32" />
+  <path
+     id="Shape_1_copy"
+     data-name="Shape 1 copy"
+     class="cls-1"
+     d="M216,363h824l-52,27" />
+  <path
+     class="cls-2"
+     d="M480.2,360H801.675S782.354,331.408,740,317c-38.277-13.022-100-12-100-12s-64.07.634-100,13C496.719,332.9,480.2,360,480.2,360Z"
+     id="path35" />
+  <path
+     id="Shape_3_copy"
+     data-name="Shape 3 copy"
+     class="cls-2"
+     d="M481.2,365H802.675S783.354,393.592,741,408c-38.277,13.021-100,12-100,12s-64.07-.634-100-13C497.719,392.1,481.2,365,481.2,365Z" />
+  <path
+     id="Shape_2_copy"
+     data-name="Shape 2 copy"
+     class="cls-3"
+     d="M319,333v55" />
+  <path
+     id="Shape_2_copy_2"
+     data-name="Shape 2 copy 2"
+     class="cls-3"
+     d="M801,333v55" />
+  <path
+     id="Shape_2_copy_3"
+     data-name="Shape 2 copy 3"
+     class="cls-3"
+     d="M480,333v55" />
+  <path
+     id="Shape_2_copy_4"
+     data-name="Shape 2 copy 4"
+     class="cls-3"
+     d="M961,333v55" />
+  <path
+     class="cls-3"
+     d="M640,245V476"
+     id="path42" />
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="211.01888"
+     y="338.71701"
+     id="text3583"><tspan
+       sodipodi:role="line"
+       x="211.01888"
+       y="338.71701"
+       id="tspan4165">$A$</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="211.6394"
+     y="412.16714"
+     id="text3583-6"><tspan
+       sodipodi:role="line"
+       x="211.6394"
+       y="412.16714"
+       id="tspan4165-9">$B$</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="863.09436"
+     y="432"
+     id="text17802"><tspan
+       sodipodi:role="line"
+       id="tspan17800"
+       x="863.09436"
+       y="432">$2^15-1$</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="702.36121"
+     y="430.28033"
+     id="text17802-3"><tspan
+       sodipodi:role="line"
+       id="tspan17800-0"
+       x="702.36121"
+       y="430.28033">$2^15-1$</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="499.49329"
+     y="407.63882"
+     id="text17802-1"><tspan
+       sodipodi:role="line"
+       id="tspan17800-2"
+       x="499.49329"
+       y="407.63882">$2^15-1$</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="383.56873"
+     y="422.12939"
+     id="text17802-8"><tspan
+       sodipodi:role="line"
+       id="tspan17800-3"
+       x="383.56873"
+       y="422.12939">$2^15-1$</tspan></text>
+  <text
+     xml:space="preserve"
+     style="font-style:normal;font-weight:normal;font-size:40px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none"
+     x="231.41777"
+     y="422.12939"
+     id="text17802-7"><tspan
+       sodipodi:role="line"
+       id="tspan17800-7"
+       x="231.41777"
+       y="422.12939">$2^15-1$</tspan></text>
+</svg>
