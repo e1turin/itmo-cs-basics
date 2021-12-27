@@ -138,11 +138,11 @@
 A, R -- набор из 16 однобитовых значений. B, С -- знаковые 16-ти разрядные числа.  Результат (A + C) -- набор из 16 однобитовых значений.
 
 \Subsection{Область допустимых значений исходных данных и результата}
-\begin{equation}
-\text{Установим свойство: }
-\lt[N\leqslant \text{\textasciicircum}X \leqslant M\rt] \LRarr 
-\lt[\text{\textasciicircum}M\leqslant X \leqslant \text{\textasciicircum}N\rt]\label{eq:not}
-\end{equation}
+% \begin{equation}
+% \text{Установим свойство: }
+% \lt[N\leqslant \text{\textasciicircum}X \leqslant M\rt] \LRarr 
+% \lt[\text{\textasciicircum}M\leqslant X \leqslant \text{\textasciicircum}N\rt]\label{eq:not}
+% \end{equation}
 
 
 $$
@@ -150,13 +150,13 @@ A\And(C-B)\Rarr
 \begin{array}{cc}
  & \boxed{A_i\in \lbrace 1, 0 \rbrace, \text{ где } 0\leqslant i \leqslant 15};\\[2mm]
 & \boxed{X=(C-B),\; X_i\in \lbrace 1, 0 \rbrace, \text{ где } 0\leqslant i \leqslant 15};
-\end{array}
+\end{array}\xRightarrow{\text{Сл. } 1^\circ, 2^\circ, 3^\circ}
 $$\\[2mm]
 
 
-$\lt[-2^{15}\leqslant C-B\leqslant2^{15}-1\rt] 
-\LRarr
-\lt[-2^{15}\leqslant C + (\text{\textasciicircum} B + 1)\leqslant2^{15}-1 \rt] \xRightarrow{\text{Сл. } 1^\circ, 2^\circ, 3^\circ}$\\[2mm]
+% $\lt[-2^{15}\leqslant C-B\leqslant2^{15}-1\rt] 
+% \LRarr
+% \lt[-2^{15}\leqslant C + (\text{\textasciicircum} B + 1)\leqslant2^{15}-1 \rt] \xRightarrow{\text{Сл. } 1^\circ, 2^\circ, 3^\circ}$\\[2mm]
 
 
 \textbf{$1^\circ.$} (Смотри рисунок \ref{fig:way1})
@@ -164,12 +164,12 @@ $\lt[-2^{15}\leqslant C-B\leqslant2^{15}-1\rt]
 $$
 \begin{cases}
 -2^{14}\leqslant C\leqslant2^{14}-1\\
--2^{14}-1\leqslant \text{\textasciicircum}B\leqslant2^{14}-2\\
+-2^{14}\leqslant -B\leqslant2^{14}-1\\
 \end{cases} 
-\xLeftrightarrow{\text{св-во. \eqref{eq:not}}} 
+\xLeftrightarrow{} 
 \begin{cases}
 -2^{14}\leqslant C\leqslant2^{14}-1\\
--2^{14}+1\leqslant B\leqslant2^{14}-1\\
+-2^{14}\leqslant B\leqslant2^{14}\\
 \end{cases} 
 $$\\[5mm]
 
@@ -178,12 +178,12 @@ $$\\[5mm]
 $$
 \begin{cases}
 -2^{15}\leqslant C\leqslant 0\\
--1\leqslant \text{\textasciicircum}B\leqslant2^{15}-2\\
+0\leqslant -B\leqslant2^{15}-1\\
 \end{cases} 
-\xLeftrightarrow{\text{св-во. \eqref{eq:not}}} 
+% \xLeftrightarrow{\text{св-во. \eqref{eq:not}}} 
 \begin{cases}
 -2^{15}\leqslant C\leqslant 0\\
--2^{15}+1\leqslant B\leqslant -1\\
+-2^{15}\leqslant B\leqslant 0\\
 \end{cases} 
 $$\\[5mm]
 
@@ -192,12 +192,12 @@ $$\\[5mm]
 $$
 \begin{cases}
 0 \leqslant C\leqslant 2^{15}-1\\
--2^{15}-1\leqslant \text{\textasciicircum}B\leqslant-1\\
+-2^{15}\leqslant -B\leqslant 0\\
 \end{cases} 
-\xLeftrightarrow{\text{св-во. \eqref{eq:not}}} 
+% \xLeftrightarrow{\text{св-во. \eqref{eq:not}}} 
 \begin{cases}
 0 \leqslant C\leqslant 2^{15}-1\\
--1 \leqslant B\leqslant 2^{15}-1\\
+0 \leqslant B\leqslant 2^{15}\\
 \end{cases} 
 $$\\[5mm]
 
@@ -209,17 +209,17 @@ A_i\in \lbrace 1, 0 \rbrace, \text{ где } 0\leqslant i \leqslant 15\\
 \lt[
 \begin{array}{l}
 \begin{cases}
--2^{14}\leqslant C\leqslant2^{14}-1\\
--2^{14}+1\leqslant B\leqslant2^{14}-1\\
-\end{cases}\\[1mm]
+-2^{15}\leqslant C\leqslant 0\\
+-2^{15}\leqslant B\leqslant 0\\
+\end{cases} \\[1mm]
 \begin{cases}
 -2^{15}\leqslant C\leqslant 0\\
--2^{15}+1\leqslant B\leqslant -1\\
-\end{cases}\\[1mm]
+-2^{15}\leqslant B\leqslant 0\\
+\end{cases} \\[1mm]
 \begin{cases}
 0 \leqslant C\leqslant 2^{15}-1\\
--1 \leqslant B\leqslant 2^{15}-1\\
-\end{cases} 
+0 \leqslant B\leqslant 2^{15}\\
+\end{cases}  
 \end{array}
 \rt.
 \end{cases}
@@ -241,16 +241,16 @@ $$
         \multicolumn{2}{|c|}{команда}     & \multicolumn{8}{c|}{выполнения команды.} & \multicolumn{2}{c|}{которой изменилось после}\\
         \multicolumn{2}{|c|}{}&\multicolumn{8}{c|}{}&\multicolumn{2}{c|}{выполнения команды}\\\hline
         Адрес & Знчение & IP & CR & AR & DR & SP & BR & AC & NZVC & Адрес & Значение\\\hline
-        077 & A082 & 077 & 0000 & 000 & 0000 & 000 & 0000  & 004 & 0100 &   & \\
-        077 & A082 & 078 & A082 & 082 & 2080 & 000 & 0077  & 000 & 0000 &   & \\
-        078 & 6076 & 079 & 6076 & 076 & A082 & 000 & 0078  & 000 & 0000 &   & \\
-        079 & E080 & 07A & E080 & 080 & 7FFE & 000 & 0079  & 000 & 0000 & 080 & 7FFE\\
-        07A & 0200 & 07B & 0200 & 07A & 0200 & 000 & 007A  & 004 & 0100 &  &\\
-        07B & 0280 & 07C & 0280 & 07B & 0280 & 000 & 007B  & 008 & 1000 &  &\\
-        07C & 2075 & 07D & 2075 & 075 & 2075 & 000 & 007C  & 000 & 0000 &  &\\
-        07D & 2080 & 07E & 2080 & 080 & 7FFE & 000 & 007D  & 000 & 0000 &  &\\
-        07E & E081 & 07F & E081 & 081 & 2074 & 000 & 007E  & 000 & 0000 & 081 & 2074\\
-        07F & 0100 & 080 & 0100 & 07F & 0100 & 000 & 007F  & 000 & 0000 &  &\\ \hline
+        077 & A082 & 077 & 0000 & 000 & 0000 & 000 & 0000  & 0000 & 0100 &   & \\
+        077 & A082 & 078 & A082 & 082 & 2080 & 000 & 0077  & 2080 & 0000 &   & \\
+        078 & 6076 & 079 & 6076 & 076 & A082 & 000 & 0078  & 7FFE & 0000 &   & \\
+        079 & E080 & 07A & E080 & 080 & 7FFE & 000 & 0079  & 7FFE & 0000 & 080 & 7FFE\\
+        07A & 0200 & 07B & 0200 & 07A & 0200 & 000 & 007A  & 0000 & 0100 &  &\\
+        07B & 0280 & 07C & 0280 & 07B & 0280 & 000 & 007B  & FFFF & 1000 &  &\\
+        07C & 2075 & 07D & 2075 & 075 & 2075 & 000 & 007C  & 2075 & 0000 &  &\\
+        07D & 2080 & 07E & 2080 & 080 & 7FFE & 000 & 007D  & 2074 & 0000 &  &\\
+        07E & E081 & 07F & E081 & 081 & 2074 & 000 & 007E  & 2074 & 0000 & 081 & 2074\\
+        07F & 0100 & 080 & 0100 & 07F & 0100 & 000 & 007F  & 2074 & 0000 &  &\\ \hline
     \end{tabular}
     }
     \caption{Таблица трассировки.}
