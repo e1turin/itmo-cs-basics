@@ -1,4 +1,6 @@
-# itmo fundamentals of professional activities repository
-There is
-- src
-- folders of lab works
+# Курс основы профессиональной деятельности (ОПД=FoPA) в ИТМО
+
+Здесь содержится:
+- папки с готовыми ЛР *lab-#*
+- папка с полезными инструментами (tools)[tools]
+- папка с отчетами по ЛР (Docs)[Docs]
