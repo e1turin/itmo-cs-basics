@@ -1,0 +1,28 @@
+ORG 0x569
+    WORD 0x057E ;569
+    WORD 0xA000 ;56a
+    WORD 0xE000 ;56b
+    WORD 0x0200 ;56c
+START:              
+    WORD 0x0200 ;56d
+    WORD 0xEEFD ;56e
+    WORD 0xAF04 ;56f
+    WORD 0xEEFA ;570
+    WORD 0xAEF7 ;571
+    WORD 0xEEF7 ;572
+    WORD 0xAAF6 ;573    
+    WORD 0x0480 ;574
+    WORD 0xF405 ;575
+    WORD 0x0480 ;576
+    WORD 0xF403 ;577
+    WORD 0x0400 ;578
+    WORD 0x0400 ;579
+    WORD 0x6AF1 ;57a
+    WORD 0x856B ;57b
+    WORD 0xCEF6 ;57c
+    WORD 0x0100 ;57d
+    WORD 0x0100 ;57e
+    WORD 0x0683 ;57f
+    WORD 0x0C00 ;580
+    WORD 0xF200 ;581
+                
