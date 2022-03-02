@@ -10,17 +10,18 @@ START:
     st   X3     ;st   (IP-6)    ;           ;570
     ld   X1     ;ld   (IP-9)    ;           ;571
     st   X2     ;st   (IP-9)    ;           ;572
-LP: 
+_LOOP: 
     ld   (X2)+  ;ld   (IP-A)+   ;           ;573
     ror         ;               ;           ;574
-    bhis IJ     ;blo IP+1+5     ;           ;575
+    bhis IFJUMP ;blo IP+1+5     ;           ;575
     ror         ;               ;           ;576
-    bhis IJ     ;blo  IP+1+3    ;           ;577
+    bhis IFJUMP ;blo  IP+1+3    ;           ;577
     rol         ;               ;           ;578
     rol         ;               ;           ;579
     sub  (X4)+  ;sub  (IP-F)+   ;           ;57a
-IJ: loop 0x56b  ;               ;           ;57b
-    jump LP     ;br   IP-A      ;           ;57c
+IFJUMP: 
+    loop 0x56b  ;               ;           ;57b
+    jump _LOOP  ;br   IP-A      ;           ;57c
     hlt         ;               ;           ;57d
 Y1: word 0x0100                             ;57e
 Y2: word 0x0683                             ;57f
