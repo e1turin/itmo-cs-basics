@@ -1,8 +1,8 @@
 org 0x569
-X1: word 0x057e                             ;569
-X2: word 0xa000                             ;56a
-X3: word 0xe000                             ;56b
-X4: word 0x0200                             ;56c
+X1: word 0x057e ; = Y0 address              ;569
+X2: word 0xa000 ; =X1 = Y0 address          ;56a
+X3: word 0xe000 ; =0x0004 = times           ;56b
+X4: word 0x0200 ; =0x0000 = counter         ;56c
 START:
     cla         ;               ;           ;56d
     st   X4     ;st   (IP-3)    ;           ;56e
@@ -12,15 +12,15 @@ START:
     st   X2     ;st   (IP-9)    ;           ;572
 _LOOP: 
     ld   (X2)+  ;ld   (IP-A)+   ;           ;573
-    ror         ;               ;           ;574
-    bhis IFJUMP ;blo IP+1+5     ;           ;575
-    ror         ;               ;           ;576
-    bhis IFJUMP ;blo  IP+1+3    ;           ;577
-    rol         ;               ;           ;578
-    rol         ;               ;           ;579
+    ror         ;C=AC mod 2     ;           ;574
+    bhis ENDLOP ;blo  IP+1+5    ;           ;575
+    ror         ;C=AC mod 2     ;           ;576
+    bhis ENDLOP ;blo  IP+1+3    ;           ;577
+    rol         ;AC<<1+C        ;           ;578
+    rol         ;AC<<1+C        ;           ;579
     sub  (X4)+  ;sub  (IP-F)+   ;           ;57a
-IFJUMP: 
-    loop 0x56b  ;               ;           ;57b
+ENDLOP: 
+    loop $X3    ;loop 0x56b     ;           ;57b
     jump _LOOP  ;br   IP-A      ;           ;57c
     hlt         ;               ;           ;57d
 Y1: word 0x0100                             ;57e
