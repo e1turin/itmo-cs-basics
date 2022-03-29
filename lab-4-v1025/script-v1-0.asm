@@ -24,24 +24,24 @@ dec             ;
 add     VAR     ;
 st      VAR     ;VAR+=f(z)-1
 hlt
-Z:      word    0xZZZZ
-Y:      word    0xYYYY
-X:      word    0xXXXX
+Z:      word    0xZZZZ ;0xffff
+Y:      word    0xYYYY ;0x00b8
+X:      word    0xXXXX ;0x00aa
 VAR:    word    0x023e  ;:0x090
 org 0x694
 FUNC:               ;f(x)
 ld      &1          ;
-bmi     LTEQZVL2    ;
-beq     LTEQZVL2    ;if(x<=0||x>183): return x*3+183
+bmi     LTEQZVL1    ;
+beq     LTEQZVL1    ;if(x<=0||x>208): return x*3+183
 cmp     VAL1        ;    
-beq     LTEQVAL2    ;
-blt     LTEQVAL2    ;if(x<=183): return 208    
-LTEQZVL2:             
+beq     LTEQVAL1    ;
+blt     LTEQVAL1    ;if(x<=208): return 208    
+LTEQZVL1:             
 add     &1          
 add     &1          
 add     VAL2        
 br      STOP        
-LTEQVAL2: 
+LTEQVAL1: 
 ld      VAL1       
 STOP: 
 st      &1

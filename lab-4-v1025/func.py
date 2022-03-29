@@ -1,7 +1,7 @@
 def f(x):
-    if(x<=0 or x>183): 
+    if(x<=0 or x>208): 
         return x*3+183
-    if(x<=183): 
+    if(x<=208): 
         return 208    
 
 z = -1
