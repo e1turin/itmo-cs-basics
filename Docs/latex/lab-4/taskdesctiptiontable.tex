@@ -1,0 +1,32 @@
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Адрес} & \textbf{\begin{tabular}[c]{@{}l@{}}Данные/\\ /Команда\end{tabular}} & \textbf{Мнемоника} & \textbf{Описание} \\ \hline
+\hex{075} & \hex{0200} & \ttt{cla}         & Очистка AC                      \\ \hline
+\hex{076} & \hex{ee19} & \ttt{st VAR}      & Обнуление переменной VAR        \\ \hline
+\hex{077} & \hex{ae16} & \ttt{ld Y}        & Загрузка Y в AC                 \\ \hline
+\hex{078} & \hex{0700} & \ttt{inc}         & Увеличение AC на 1              \\ \hline
+\hex{079} & \hex{0c00} & \ttt{push}        & Положить значение AC на стэк    \\ \hline
+\hex{07a} & \hex{d694} & \ttt{call \$FUNC} & Вызов функции FUNC              \\ \hline
+\hex{07b} & \hex{0800} & \ttt{pop}         & Загрузка из стэка в AC          \\ \hline
+\hex{07c} & \hex{4e13} & \ttt{add VAR}     & Прибавление переменной VAR к AC \\ \hline
+\hex{07d} & \hex{ee12} & \ttt{st VAR}      & Сохранение значения в VAR       \\ \hline
+\hex{07e} & \hex{ae10} & \ttt{ld X}        & Загрузка переменной X в AC      \\ \hline
+\hex{07f} & \hex{0c00} & \ttt{push}        & Положить значение AC на стэк    \\ \hline
+\hex{080} & \hex{d694} & \ttt{call \$FUNC} & Вызов функции FUNC              \\ \hline
+\hex{081} & \hex{0800} & \ttt{pop}         & Загрузка из стэка в AC          \\ \hline
+\hex{082} & \hex{0700} & \ttt{inc}         & Увеличение AC на 1              \\ \hline
+\hex{083} & \hex{4e0c} & \ttt{add VAR}     & Прибавление переменной VAR к AC \\ \hline
+\hex{084} & \hex{ee0b} & \ttt{st VAR}      & Сохранение значения в VAR       \\ \hline
+\hex{085} & \hex{ae07} & \ttt{ld X}        & Загрузка переменной X в AC      \\ \hline
+\hex{086} & \hex{0c00} & \ttt{push}        & Положить значение AC на стэк    \\ \hline
+\hex{087} & \hex{d694} & \ttt{call \$FUNC} & Вызов функции FUNC              \\ \hline
+\hex{088} & \hex{0800} & \ttt{pop}         & Загрузка из стэка в AC          \\ \hline
+\hex{089} & \hex{0740} & \ttt{inc}         & Увеличение AC на 1              \\ \hline
+\hex{08a} & \hex{4e05} & \ttt{add VAR}     & Прибавление переменной VAR к AC \\ \hline
+\hex{08b} & \hex{ee04} & \ttt{st VAR}      & Сохранение значения в VAR       \\ \hline
+\hex{08c} & \hex{0100} & \ttt{hlt}         & Останов                         \\ \hline
+\hex{08d} & \hex{zzzz} & Z                 & Параметр Z                      \\ \hline
+\hex{08e}  & \hex{yyyy} & Y                 & Параметр Y                       \\ \hline
+\hex{08f}  & \hex{xxxx} & X                 & Параметр X                      \\ \hline
+\hex{090} & \hex{023e} & VAR               & Переменная, хранящая результат                     \\ \hline
+\end{tabular}
