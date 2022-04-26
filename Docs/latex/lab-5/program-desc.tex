@@ -1,0 +1,58 @@
+\begin{tabular}{|l|l|l|l|}
+\hline
+\textbf{Адрес} & \textbf{Метка} & \textbf{Мнемоника} & \textbf{Описание} \\ \hline
+\hex{5d2	}	&	\ttt{	endchar:	}	&	\ttt{	word 0x0a	}	&	Код стоп символа	\\	
+\hex{5d3	}	&	\ttt{	mask:	}	&	\ttt{	word 0x00ff	}	&	Маска для отделения младшего байта слова	\\	
+\hex{5d4	}	&	\ttt{	str:	}	&	\ttt{	word 0x562	}	&	Адрес начала строки	\\	
+\hex{5d5	}	&	\ttt{	str.len:	}	&	\ttt{	word 0x0	}	&	Длина строки	\\	
+\hex{5d6	}	&	\ttt{	str.iter:	}	&	\ttt{	word 0x0	}	&	Переменная итерирования по строке	\\	
+\hex{5d7	}	&	\ttt{	char:	}	&	\ttt{	word 0x0	}	&	Переменная для кода полученного символа	\\	
+\hex{5d8	}	&	\ttt{	START:	}	&	\ttt{	ld  \$str 	}	&	Начало программы	\\	
+\hex{5d9	}	&	\ttt{		}	&	\ttt{	st \$str.iter	}	&	Итератор по строке устанавливается в начало	\\	\hline
+\hex{5da	}	&	\ttt{	\_readstr:  	}	&	\ttt{	cla 	}	&	Цикл ввода строки	\\	
+\hex{5db	}	&	\ttt{		}	&	\ttt{	call    \_readchar 	}	&	Вызов подпрограммы считывания символа	\\	
+\hex{5dc	}	&	\ttt{		}	&	\ttt{	st \$char	}	&		\\	
+\hex{5dd	}	&	\ttt{		}	&	\ttt{	ld \$str.len	}	&	Увеличение длины строки на 1	\\	
+\hex{5de	}	&	\ttt{		}	&	\ttt{	inc 	}	&		\\	
+\hex{5df	}	&	\ttt{		}	&	\ttt{	st \$str.len	}	&		\\	
+\hex{5e0	}	&	\ttt{		}	&	\ttt{	ror 	}	&		\\	
+\hex{5e1	}	&	\ttt{		}	&	\ttt{	bcc \_oddpos      	}	&	Обработка позиции символа в троке	\\	
+\hex{5e2	}	&	\ttt{		}	&	\ttt{	ld \$char	}	&		\\	
+\hex{5e3	}	&	\ttt{		}	&	\ttt{	st (str.iter)	}	&		\\	
+\hex{5e4	}	&	\ttt{		}	&	\ttt{	jump \_is\_end	}	&		\\	
+\hex{5e5	}	&	\ttt{	\_oddpos:	}	&	\ttt{	ld \$char	}	&	Изменение положения кода символа в слове для четных позиций	\\	
+\hex{5e6	}	&	\ttt{		}	&	\ttt{	swab 	}	&		\\	
+\hex{5e7	}	&	\ttt{		}	&	\ttt{	add (str.iter)	}	&		\\	
+\hex{5e8	}	&	\ttt{		}	&	\ttt{	st (str.iter)+	}	&	Сдвиг итератора на позицию следующей пары символов	\\	
+\hex{5e9	}	&	\ttt{	\_is\_end:             	}	&	\ttt{	ld \$char	}	&	Проверка на стоп-символ	\\	
+\hex{5ea	}	&	\ttt{		}	&	\ttt{	cmp endchar	}	&		\\	
+\hex{5eb	}	&	\ttt{		}	&	\ttt{	bne \_readstr	}	&		\\	
+\hex{5ec	}	&	\ttt{		}	&	\ttt{	ld \$str	}	&	Итератор устанавливается на начало строки	\\	
+\hex{5ed	}	&	\ttt{		}	&	\ttt{	st \$str.iter  	}	&		\\	\hline
+\hex{5ee	}	&	\ttt{	\_printstr:	}	&	\ttt{	ld (str.iter)     	}	&	Цикл вывода строки	\\	
+\hex{5ef	}	&	\ttt{		}	&	\ttt{	call \_writechar	}	&	Вызов подпрограммы для вывода первого символа в слове	\\	
+\hex{5f0	}	&	\ttt{		}	&	\ttt{	ld      (str.iter) 	}	&		\\	
+\hex{5f1	}	&	\ttt{		}	&	\ttt{	and     mask 	}	&		\\	
+\hex{5f2	}	&	\ttt{		}	&	\ttt{	cmp     endchar 	}	&	Проверка на стоп-символ	\\	
+\hex{5f3	}	&	\ttt{		}	&	\ttt{	beq     \_\_stop 	}	&		\\	
+\hex{5f4	}	&	\ttt{		}	&	\ttt{	ld      (str.iter)  	}	&		\\	
+\hex{5f5	}	&	\ttt{		}	&	\ttt{	swab 	}	&		\\	
+\hex{5f6	}	&	\ttt{		}	&	\ttt{	call \_writechar	}	&	Вызов подпрограммы для вывода второго символа в слове	\\	
+\hex{5f7	}	&	\ttt{		}	&	\ttt{	ld      (str.iter)+ 	}	&		\\	
+\hex{5f8	}	&	\ttt{		}	&	\ttt{	swab 	}	&		\\	
+\hex{5f9	}	&	\ttt{		}	&	\ttt{	and     mask 	}	&		\\	
+\hex{5fa	}	&	\ttt{		}	&	\ttt{	cmp     endchar 	}	&		\\	
+\hex{5fb	}	&	\ttt{		}	&	\ttt{	bne     \_printstr 	}	&		\\	\hline
+\hex{5fc	}	&	\ttt{	\_\_stop:	}	&	\ttt{	hlt 	}	&	Останов	\\	\hline
+\hex{5fd	}	&	\ttt{	\_readchar:            	}	&	\ttt{	in      7 	}	&	Подпрограмма для ввода символа	\\	
+\hex{5fe	}	&	\ttt{		}	&	\ttt{	and     \#0x40 	}	&	Цикл ожидания ввода	\\	
+\hex{5ff	}	&	\ttt{		}	&	\ttt{	beq     \_readchar 	}	&		\\	
+\hex{600	}	&	\ttt{		}	&	\ttt{	in      6 	}	&	Ввод кода символа	\\	
+\hex{601	}	&	\ttt{		}	&	\ttt{	and     mask 	}	&		\\	
+\hex{602	}	&	\ttt{		}	&	\ttt{	ret 	}	&		\\	\hline
+\hex{603	}	&	\ttt{	\_writechar:         	}	&	\ttt{	out     0xc 	}	&	Подпрограмма для вывода символа	\\	
+\hex{604	}	&	\ttt{	\_waitwrote:	}	&	\ttt{	in 0xe	}	&	Ожидание окончания вывода	\\	
+\hex{605	}	&	\ttt{		}	&	\ttt{	ror 	}	&		\\	
+\hex{606	}	&	\ttt{		}	&	\ttt{	bcs \_waitwrote	}	&		\\	
+\hex{607	}	&	\ttt{		}	&	\ttt{	ret 	}	&		\\	\hline	
+\end{tabular}
