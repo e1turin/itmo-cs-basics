@@ -196,9 +196,6 @@ name: NAME ;
 label: name ;
 lbl: label ':' ;
 
-
-
-
 indirect: '(' label ')' ;
 directRelative: label ;
 directLoad: '#' number ;

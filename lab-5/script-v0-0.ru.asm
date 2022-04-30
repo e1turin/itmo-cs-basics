@@ -1,72 +1,72 @@
 org	        0x5d2	        
-endchar:	word	0x0a	;'\n' => stop
-mask:	    word	0x00ff	;mask for 1 char
+стопсимв:	    word	0x0a	;'\n' => stop
+маска:	        word	0x00ff	;маска for 1 симв
 
-str:	    word	0x562	;str[0]
-str.len:	word	0x0	    ;lenght of str
-str.iter:	word	0x0	    ;pointer on str char
-char:	    word	0x0	    ;char variable
+строка:	        word	0x562	;строка[0]
+длина_строки:	word	0x0	    ;lenght of строка
+поз_в_строке:	word	0x0	    ;pointer on строка симв
+симв:	        word	0x0	    ;симв variable
 
 START:		       
-ld  $str	     
-st	$str.iter	            ;str.iter -> str[0]
+ням     $строка	     
+тьфу	$поз_в_строке	            ;поз_в_строке -> строка[0]
 
-_readstr:                   ;str read loop	
-    cla
-    call    _readchar	
-    st	    $char	
-    ld	    $str.len	
-    inc		
-    st	    $str.len	
-    ror		            
-    bcc	    _oddpos         ;char position is odd	
-    ld	    $char	    
-    st	    (str.iter)	
-    jump	_is_end	
-    _oddpos:	
-    ld	    $char
-    swab		
-    add	    (str.iter)	
-    st	    (str.iter)+	
-    _is_end:                ;check for end of input	
-    ld	    $char
-    cmp	    endchar	
-    bne	    _readstr	
+_ввод_строки:                   ;строка read loop	
+    чисть
+    вжух    _читать_симв	
+    тьфу	$симв	
+    ням	    $длина_строки	
+    увел		
+    тьфу	$длина_строки	
+    цправ		            
+    bcc	    _четная_поз         ;симв position is odd	
+    ням	    $симв	    
+    тьфу	(поз_в_строке)	
+    прыг	_конец_или_нет	
+    _четная_поз:	
+    ням	    $симв
+    наоборот		
+    плюс	(поз_в_строке)	
+    тьфу	(поз_в_строке)+	
+    _конец_или_нет:                ;check for end of input	
+    ням	    $симв
+    срав    стопсимв	
+    bne	    _ввод_строки	
 
-ld	    $str	
-st	    $str.iter           ;str.iter := str[0]	
+ням	    $строка	
+тьфу	$поз_в_строке           ;поз_в_строке := строка[0]	
 
-_printstr:	                ;str print loop 
-    ld	    (str.iter)      ;first byte	
-    call	_writechar	
-    ld      (str.iter)
-    and     mask	
-    cmp     endchar	
-    beq     __stop	
+_печать_строки:	                ;строка print loop 
+    ням	    (поз_в_строке)      ;first byte	
+    вжух	_запись_симв	
+    ням     (поз_в_строке)
+    и       маска	
+    срав    стопсимв	
+    бяка    _остановись	
     
-    ld      (str.iter)      ;second byte
-    swab		
-    call	_writechar	
-    ld      (str.iter)+
-    swab		
-    and     mask	
-    cmp     endchar	
-    bne     _printstr	
-__stop:	
-hlt
+    ням     (поз_в_строке)      ;second byte
+    наоборот		
+    вжух	_запись_симв	
+    ням     (поз_в_строке)+
+    наоборот		
+    и       маска	
+    срав    стопсимв	
+    bne     _печать_строки	
+_остановись:	
+стоп
 
-_readchar:                  ;read char from dev-3	
-    in      7	    
-    and     #0x40	
-    beq     _readchar	
-    in      6	
-    and     mask	
-    ret		
+_читать_симв:                  ;read симв from dev-3	
+    ввод    7	    
+    и       #0x40	
+    бяка    _читать_симв	
+    ввод    6	
+    и       маска	
+    возвр		
 
-_writechar:                 ;write char to dev-5
-    out     0xc	
-    _waitwrote:	
-    in	    0xe	
-    ror		
-    bcs	    _waitwrote	
-    ret		
+_запись_симв:                 ;write симв to dev-5
+    вывод   0xc	
+    _жди_записи:	
+    ввод	0xe	
+    цправ		
+    bcs	    _жди_записи	
+    возвр		
