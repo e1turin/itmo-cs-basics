@@ -1,0 +1,74 @@
+\begin{longtable}{|l|l|l|l|}
+\hline
+\textbf{Адрес} & \textbf{Метка} & \textbf{Мнемоника} &\textbf{Описание} 
+\\ \hline
+\hex{000}	&		&	org		0x000	&		\\	
+\hex{001}	&	v0:	&	word		\$default, 0x180	&	Инициализация вектора 	\\	
+\hex{002}	&	v1:	&	word		\$default, 0x180	&	прерываний	\\	
+\hex{003}	&	v2:	&	word		\$int2, 0x180	&		\\	
+\hex{004}	&	v3:	&	word		\$int3, 0x180	&		\\	
+\hex{005}	&	v4:	&	word		\$default, 0x180	&		\\	
+\hex{006}	&	v5:	&	word		\$default, 0x180	&		\\	
+\hex{007}	&	v6:	&	word		\$default, 0x180	&		\\	
+\hex{008}	&	v7:	&	word		\$default, 0x180	&		\\	\hline
+			&	&	og		0x015	&	Параметры программы	\\	
+\hex{015}	&	x:	&	word		?	&	Переменная (X)	\\	
+\hex{016}	&	uplim:	&	word		0x002a	&	Верхняя граница ОДЗ	\\	
+\hex{017}	&	lowlim:	&	word		0xffd5	&	Нижняя граница ОДЗ	\\	
+\hex{018}	&	default:	&	iret			&	Стандарт. обработка прер.	\\	\hline
+\hex{019}	&	int2:	&	nop			&	Обработчик прерывания ВУ-2, 	\\	
+\hex{01A}	&		&	cla			&	точка для остановы	\\	
+\hex{01B}	&		&	in		0x4	&	Считывние из ВУ-2	\\	
+\hex{01C}	&		&	sxtb			&	Прибавление утроенного 	\\	
+\hex{01D}	&		&	push			&	значания  РД ВУ-2	\\	
+\hex{01E}	&		&	asl			&		\\	
+\hex{01F}	&		&	add    		\&0	&		\\	
+\hex{020}	&		&	add		x	&		\\	
+\hex{021}	&		&	call		\_check	&		\\	
+\hex{022}	&		&	st		x	&		\\	
+\hex{023}	&		&	pop			&		\\	
+\hex{024}	&		&	ld		x	&		\\	
+\hex{025}	&		&	nop			&	Точка для остановы	\\	
+\hex{026}	&		&	iret			&		\\	\hline
+\hex{027}	&	int3:	&	nop			&	Обработчик прерывания ВУ-3, 	\\	
+\hex{028}	&		&	ld		x	&	точка для остановы	\\	
+\hex{029}	&		&	asl			&	Арифметическая операция 3x+1	\\	
+\hex{02A}	&		&	add		x	&		\\	
+\hex{02B}	&		&	inc			&		\\	
+\hex{02C}	&		&	out		0x6	&	Вывод на ВУ-3	\\	
+\hex{02D}	&		&	nop			&	Точка для остановы	\\	
+\hex{02E}	&		&	iret			&		\\	\hline
+\hex{02F}	&	\_check:	&	cmp uplim			&	Подпрограмма для проверки	\\	
+\hex{030}	&		&	bpl \_setmax			&	 выхода из ОДЗ	\\	
+\hex{031}	&		&	cmp lowlim			&		\\	
+\hex{032}	&		&	bmi \_setmax			&		\\	
+\hex{033}	&	\_retcheck:	&	ret			&		\\	
+\hex{034}	&	\_setmax:	&	ld uplim			&		\\	
+\hex{035}	&		&	jump \_retcheck			&		\\	\hline
+\hex{036}	&	START:	&	di			&	Начало программы, 	\\	
+\hex{037}	&		&	cla			&	инициализация векторов 	\\	
+\hex{038}	&		&	out		0x1	&	прерывания	\\	
+\hex{039}	&		&	out		0x3	&		\\	
+\hex{03A}	&		&	out		0xb	&		\\	
+\hex{03B}	&		&	out		0xf	&		\\	
+\hex{03C}	&		&	out		0x13	&		\\	
+\hex{03D}	&		&	out		0x17	&		\\	
+\hex{03E}	&		&	out		0x1b	&		\\	
+\hex{03F}	&		&	out		0x1f	&		\\	
+\hex{040}	&		&	ld		\#0xa	&		\\	
+\hex{041}	&		&	out		0x5	&		\\	
+\hex{042}	&		&	ld		\#0xb	&		\\	
+\hex{043}	&		&	out		0x7	&		\\	
+\hex{044}	&		&	ei			&		\\	\hline
+\hex{045}	&	main:	&	di			&	Главный цикл	\\	
+\hex{046}	&		&	ld		x	&	Уменьшение переменной на 2	\\	
+\hex{047}	&		&	sub		\#2	&		\\	
+\hex{048}	&		&	call		\_check	&		\\	
+\hex{049}	&		&	st		x	&		\\	
+\hex{04A}	&		&	ei			&		\\	
+\hex{04B}	&		&	nop			&		\\	
+\hex{04С}	&		&	jump		main	&		\\	
+\hline
+\caption{Описание работы программ}
+\label{tab:program-desc}
+\end{longtable}
