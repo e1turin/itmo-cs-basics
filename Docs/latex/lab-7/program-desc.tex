@@ -1,0 +1,12 @@
+\begin{longtable}{|l|l|l|}
+\hline
+\textbf{Aдрес МП} &	\textbf{Мк-команда}	& \textbf{Действие~;~Комментарий}   \\\hline
+	E0	&	0001E09611	&	$\sim$ AC + DR + 1 $\to$ DR, N, Z, V, C~;~\\
+	    &               &   Вычетание AC из значения M в DR\\
+	    &               &    и установка   признаков результата\\\hline
+	E1	&	8055101040	&	GOTO STORE @ 55	~;~\\
+	    &               &   Переход на микропрограмму сохранения\\
+	    &               &   DR по адресу из AR  \\\hline
+\caption{Описание работы синтезированной микропрограммы}
+\label{tab:program-desc}
+\end{longtable}
